@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Section </title>
+    <!--===stylesheet===-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="shortcut icon" href="images/fav-icon.png">   
+
+   <!----====Poppins Font Family===-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>   
+<body>
+
+<!--== Project Section ==-->
+
+<section id="project">
+
+    <!----====Heading===-->
+
+    <div class="project-heading">
+        <span>Let's Dive Through My Work</span>
+        <h3>My Projects</h3>
+    </div>
+
+    <!----====Filter===-->
+
+    <ul class="project-filter">
+        <li class="list project-filter-active" data-filter="all">All</li>
+        <li class="list" data-filter="Web-design">Web & App Design</li>
+        <li class="list" data-filter="G-design">Graphics Design</li>
+        <li class="list" data-filter="AI">AI</li>
+        <li class="list" data-filter="cybersecurity">Cybersecurity</li>
+    </ul>
+
+    <!----== container ==-->
+
+    <div class="project-container">
+
+        <!---== Box-1 (about-websites) ==--->
+        <a href="" class="project-box Web-design">
+            <img src="images/b-1.jpg">
+        </a>
+        
+        <!---== Box-2 (about-G-design) ==--->
+        <a href="" class="project-box G-design">
+            <img src="images/b-2.jpg">
+        </a>
+
+        <!---== Box-3 (about-websites) ==--->
+        <a href="" class="project-box Web-design">
+            <img src="images/b-3.jpg">
+        </a>
+
+        <!---== Box-4 (about-G-design) ==--->
+        <a href="" class="project-box G-design">
+            <img src="images/b-4.jpg">
+        </a>
+
+        <!---== Box-5 (about-AI) ==--->
+        <a href="" class="project-box AI">
+            <img src="images/b-5.jpg">
+        </a>
+
+        <!---== Box-6 (about-cybersecurity) ==--->
+        <a href="" class="project-box cybersecurity">
+            <img src="images/b-6.jpg">
+        </a>
+
+    </div>
+
+</section>
+ 
+<!----== JavaScript ==-->
+
+<script src="js/JQuery.js"></script>
+
+<script type="text/javascript">
+
+/*-- for-filter-menu --*/
+
+    
+    $(document).on('click','.project-filter li',function(){
+        $(this).addClass('project-filter-active').siblings().removeClass('project-filter-active')
+    });
+
+/*-- for-project/work-filter --*/
+$(document).ready(function(){
+    $('.list').click(function({
+        const value = $(this).attr('data-filter');
+        if(value == 'all'){
+            $('.project-box').show('1000');
+        }
+        else{
+            $('.project-box').not('.'+value).hide('1000');
+            $('.project-box').filter('.' + value).show('1000');
+        }
+    }));
+});
+
+</script>
+</body>
+</html>
